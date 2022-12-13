@@ -77,7 +77,7 @@ contract Locker is Ownable, ReentrancyGuard {
           require(msg.sender == _lock.owner, "You are not the owner of the lock!");
           require(_amount != 0, "You already withdrawn the tokens!");
 
-          _lock.amount = 0;
+          locks[_index].amount = 0;
           myLocks[msg.sender][_personalId].amount = 0;
           tokenLocks[_tokenAddress][_tokenId].amount = 0;
 
